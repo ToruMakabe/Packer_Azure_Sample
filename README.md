@@ -2,6 +2,7 @@
 Sample files Packer & Ansible for Azure ARM
 
 # Preparation
+* Prepare your Resource Group & Storage Account to store your image
 * Make "builder/variables.json" file to describe your credentials & identifiers
     * "variables.sample.json" is for your reference
 * Make "builder/packer.json" file to describe your packer configuration
