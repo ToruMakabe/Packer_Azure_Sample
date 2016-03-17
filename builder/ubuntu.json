@@ -30,7 +30,7 @@
   "provisioners": [{
     "type": "shell",
       "scripts": [
-        "../script/provision.sh"
+        "../script/ubuntu/provision.sh"
     ]
   },
   {
@@ -44,7 +44,7 @@
   {
     "type": "shell",
       "scripts": [
-        "../script/deprovision.sh"
+        "../script/ubuntu/deprovision.sh"
     ]
   }]
 }
