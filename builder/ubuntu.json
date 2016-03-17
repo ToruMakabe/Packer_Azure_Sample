@@ -1,0 +1,50 @@
+{
+  "variables": {
+    "client_id": "",
+    "client_secret": "",
+    "resource_group": "",
+    "storage_account": "",
+    "subscription_id": "",
+    "tenant_id": ""
+  },
+  "builders": [{
+    "type": "azure-arm",
+
+    "client_id": "{{user `client_id`}}",
+    "client_secret": "{{user `client_secret`}}",
+    "resource_group_name": "{{user `resource_group`}}",
+    "storage_account": "{{user `storage_account`}}",
+    "subscription_id": "{{user `subscription_id`}}",
+    "tenant_id": "{{user `tenant_id`}}",
+
+    "capture_container_name": "images",
+    "capture_name_prefix": "packer",
+
+    "image_publisher": "Canonical",
+    "image_offer": "UbuntuServer",
+    "image_sku": "14.04.3-LTS",
+
+    "location": "Japan West",
+    "vm_size": "Standard_D1"
+  }],
+  "provisioners": [{
+    "type": "shell",
+      "scripts": [
+        "../script/provision.sh"
+    ]
+  },
+  {
+    "type": "ansible-local",
+    "playbook_file": "../ansible/baseimage.yml",
+    "inventory_file": "../ansible/hosts",
+    "role_paths": [
+      "../ansible/roles/baseimage"
+    ]
+  },
+  {
+    "type": "shell",
+      "scripts": [
+        "../script/deprovision.sh"
+    ]
+  }]
+}
