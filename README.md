@@ -1,5 +1,5 @@
 # Overview
-Sample files Packer & Ansible for Azure ARM
+Sample Packer & Ansible files for Azure ARM
 
 # Preparation
 * Prepare your Resource Group & Storage Account to store your image
