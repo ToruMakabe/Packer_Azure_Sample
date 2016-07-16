@@ -22,10 +22,11 @@
 
     "image_publisher": "Canonical",
     "image_offer": "UbuntuServer",
-    "image_sku": "14.04.3-LTS",
+    "image_sku": "14.04.4-LTS",
 
     "location": "Japan West",
-    "vm_size": "Standard_D1"
+    "vm_size": "Standard_D1",
+    "os_type": "Linux"
   }],
   "provisioners": [{
     "type": "shell",
